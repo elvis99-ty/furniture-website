@@ -1,0 +1,76 @@
+.footer {
+  background-color: #f5f3ef; /* same as blog section */
+  padding: 40px 50px 25px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+}
+
+/* Top row: links (left) and socials (right) */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1150px;
+  margin: 0 auto;
+  border-bottom: 1px solid #d8d5d0;
+  padding-bottom: 20px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-left a:hover {
+  color: #c89b00;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-right a {
+  color: #333;
+  font-size: 1.4rem;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: #c89b00;
+}
+
+/* Bottom row: copyright */
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .footer-left {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-right {
+    justify-content: center;
+  }
+}
