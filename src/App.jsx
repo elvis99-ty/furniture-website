@@ -1,24 +1,27 @@
-import React from "react";
+import {Routes, Route, useLocation} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import CollectionSection from "./components/CollectionSection";
-import Blog from "./components/Blog";
-import Contact from "./components/Contatc";
+import Home from "./pages/Home";
+import Products from "./components/Product";
 import Footer from "./components/Footer";
 
-const App = () => {
+function App() {
+  const location = useLocation();
+
   return (
     <>
     <Navbar/>
-    <HeroSection/>
-    <AboutSection/>
-    <CollectionSection/>
-    <Blog/>
-    <Contact/>
+
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home/>}/>
+        <Route path="/products" element={<Products/>} />
+      </Routes>
+    </AnimatePresence>
+
     <Footer/>
     </>
   );
-};
+}
 
 export default App;

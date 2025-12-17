@@ -1,6 +1,6 @@
 .hero {
   width: 100%;
-  height: 180vh;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-/* ✅ Subtle dark overlay for readability */
+/* ✅ Overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -19,10 +19,12 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.35);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 0 20px 120px;
+  padding-top: 120px; /* ⬆ pushes text upward */
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 /* ✅ Text styling */
@@ -63,6 +65,10 @@
 
 /* ✅ Responsive */
 @media (max-width: 900px) {
+  .overlay {
+    padding-top: 80px; /* keep it higher on mobile too */
+  }
+
   .hero-content h1 {
     font-size: 2.2rem;
   }

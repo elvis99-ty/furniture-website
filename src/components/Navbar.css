@@ -43,6 +43,7 @@ body {
   list-style: none;
   gap: 35px;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .navbar-links li a {
@@ -59,7 +60,7 @@ body {
 
 /* ✅ Shop Button */
 .shop-btn {
-  background: #e6b800;
+  background: #c99a00;
   color: #fff;
   border: none;
   padding: 10px 22px;
@@ -67,12 +68,13 @@ body {
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
+  text-decoration: none;
   margin-left: 25px;
   transition: background 0.3s ease;
 }
 
 .shop-btn:hover {
-  background: #c99a00;
+  background: black;
 }
 
 /* ✅ Hamburger Menu (Hidden on Desktop) */

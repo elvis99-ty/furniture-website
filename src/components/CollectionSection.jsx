@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./CollectionSection.css";
 
 import bedImg from "../images/Bed frame2.jpg";
-import tvImg from "../images/Tv console.jpg"
+import tvImg from "../images/Tv console.jpg";
 import chairImg from "../images/Collection1.jpg";
 
 const Collection = () => {
   return (
-    <section className="collection">
+    <section className="collection" id="products">
       <h2>Our Collection</h2>
 
       <div className="collection-grid">
@@ -27,7 +28,10 @@ const Collection = () => {
         </div>
       </div>
 
-      <button className="view-btn">View Full Collection</button>
+      {/* Updated: Button now links to /products */}
+      <Link to="/products" className="view-btn">
+        View Full Collection
+      </Link>
     </section>
   );
 };
