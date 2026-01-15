@@ -1,9 +1,9 @@
 import React from "react";
 import "./Blog.css";
 
-import blog1 from "../images/Blog1.jpg";
-import blog2 from "../images/Blog2.jpg";
-import blog3 from "../images/Blog3.jpg";
+import blog1 from "../images/Dinning image3.jpg";
+import blog2 from "../images/Wadrope image2.jpg";
+import blog3 from "../images/Wadrope image3.jpg";
 
 const Blog = () => {
     return (

@@ -40,8 +40,7 @@
               <div className="info-icon">📞</div>
               <div className="info-text">
                 <h4>Call Us</h4>
-                <a href="tel:+2348035059077">+234 803 505 9077</a> OR     
-                <a href="tel:+2348168985359">+234 816 599 4963</a>
+                <a href="tel:+2348035059077">+234 803 505 9077</a>
               </div>
             </div>
 
