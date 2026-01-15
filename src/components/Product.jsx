@@ -1,5 +1,4 @@
 import React, { useState } from "react"; // Added useState
-import { motion, AnimatePresence } from "framer-motion"; // Added AnimatePresence
 import PageTransition from "./PageTransition";
 import "./Product.css";
 
@@ -70,7 +69,7 @@ import sofa7 from "../images/Sofa image7.jpg";
 
 // TV CONSOLE
 
-import tv1 from "../images/Tv console1.jpeg";
+import tv1 from "../images/Tv console1.jpg";
 import tv2 from "../images/Tv console2.jpg";
 import tv3 from "../images/Tv console3.jpg";
 import tv4 from "../images/Tv console4.jpg";
