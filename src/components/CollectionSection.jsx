@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import "./CollectionSection.css";
 
 
-import bedImg from "../images/bed frame1.jpg";
-import tvImg from "../images/Tv console2.jpg";
-import chairImg from "../images/Sofa image3.jpg"
+import bedImg from "../images/Bed-frame1.jpg";
+import tvImg from "../images/Tv-console2.jpg";
+import chairImg from "../images/Sofa-image3.jpg"
 
 
 const Collection = () => {

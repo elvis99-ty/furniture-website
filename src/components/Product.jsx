@@ -1,88 +1,88 @@
 import React, { useState } from "react"; // Added useState
+import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "./PageTransition";
 import "./Product.css";
 
 // BED FRAME
 
-import bed1 from "../images/Bed frame1.jpg";
-import bed2 from "../images/Bed frame2.jpg";
-import bed3 from "../images/Bed frame3.jpg";
-import bed4 from "../images/Bed frame4.jpg";
-import bed5 from "../images/Bed frame5.jpg";
-import bed6 from "../images/Bed frame01.jpg";
+import bed1 from "../images/Bed-frame1.jpg";
+import bed2 from "../images/Bed-frame2.jpg";
+import bed3 from "../images/Bed-frame3.jpg";
+import bed4 from "../images/Bed-frame4.jpg";
+import bed5 from "../images/Bed-frame5.jpg";
+import bed6 from "../images/Bed-frame01.jpg";
 
 // DINNING
 
-import din1 from "../images/Dinning image1.jpg";
-import din2 from "../images/Dinning image2.jpg";
-import din3 from "../images/Dinning image3.jpg";
-import din4 from "../images/Dinning image4.jpg";
-import din5 from "../images/Dinning image5.jpg";
-import din6 from "../images/Dinning image6.jpg";
-import din7 from "../images/Dinning image7.jpg";
+import din1 from "../images/Dinning-image1.jpg";
+import din2 from "../images/Dinning-image2.jpg";
+import din3 from "../images/Dinning-image3.jpg";
+import din4 from "../images/Dinning-image4.jpg";
+import din5 from "../images/Dinning-image5.jpg";
+import din6 from "../images/Dinning-image6.jpg";
+import din7 from "../images/Dinning-image7.jpg";
 
 // DOOR
 
-import door1 from "../images/Door image1.jpg";
-import door2 from "../images/Door image2.jpg";
-import door3 from "../images/Door image3.jpg";
-import door4 from "../images/Door image4.jpg";
-import door5 from "../images/Door image5.jpg";
-import door6 from "../images/Door image6.jpg";
-import door7 from "../images/Door image7.jpg";
+import door1 from "../images/Door-image1.jpg";
+import door2 from "../images/Door-image2.jpg";
+import door3 from "../images/Door-image3.jpg";
+import door4 from "../images/Door-image4.jpg";
+import door5 from "../images/Door-image5.jpg";
+import door6 from "../images/Door-image6.jpg";
+import door7 from "../images/Door-image7.jpg";
 
 // KITCHEN
 
-import kit1 from "../images/Kitchen image1.jpeg";
-import kit2 from "../images/Kitchen image2.jpeg";
-import kit3 from "../images/Kitchen image3.jpeg";
-import kit4 from "../images/Kitchen image4.jpeg";
-import kit5 from "../images/Kitchen image5.jpeg";
-import kit6 from "../images/Kitchen image6.jpeg";
-import kit7 from "../images/Kitchen image7.jpeg";
+import kit1 from "../images/Kitchen-image1.jpeg";
+import kit2 from "../images/Kitchen-image2.jpeg";
+import kit3 from "../images/Kitchen-image3.jpeg";
+import kit4 from "../images/Kitchen-image4.jpeg";
+import kit5 from "../images/Kitchen-image5.jpeg";
+import kit6 from "../images/Kitchen-image6.jpeg";
+import kit7 from "../images/Kitchen-image7.jpeg";
 
 // OFFICE SETUP
 
-import off1 from "../images/Office setup1.jpg";
-import off2 from "../images/Office setup2.jpg";
-import off3 from "../images/Office setup3.jpg";
-import off4 from "../images/Office setup4.jpg";
+import off1 from "../images/Office-setup1.jpg";
+import off2 from "../images/Office-setup2.jpg";
+import off3 from "../images/Office-setup3.jpg";
+import off4 from "../images/Office-setup4.jpg";
 
 // SCHOOL FURNITURE
 
-import sch1 from "../images/School furniture1.jpg";
-import sch2 from "../images/School furniture2.jpg";
-import sch3 from "../images/School furniture3.jpg";
-import sch4 from "../images/School furniture4.jpg";
-import sch5 from "../images/School furniture5.jpg";
-import sch6 from "../images/School furniture6.jpg";
+import sch1 from "../images/School-furniture1.jpg";
+import sch2 from "../images/School-furniture2.jpg";
+import sch3 from "../images/School-furniture3.jpg";
+import sch4 from "../images/School-furniture4.jpg";
+import sch5 from "../images/School-furniture5.jpg";
+import sch6 from "../images/School-furniture6.jpg";
 
 // SOFA IMAGE
 
-import sofa1 from "../images/Sofa image1.jpg";
-import sofa2 from "../images/Sofa image2.jpg";
-import sofa3 from "../images/Sofa image3.jpg";
-import sofa4 from "../images/Sofa image4.jpg";
-import sofa5 from "../images/Sofa image5.jpg";
-import sofa6 from "../images/Sofa image6.jpg";
-import sofa7 from "../images/Sofa image7.jpg";
+import sofa1 from "../images/Sofa-image1.jpg";
+import sofa2 from "../images/Sofa-image2.jpg";
+import sofa3 from "../images/Sofa-image3.jpg";
+import sofa4 from "../images/Sofa-image4.jpg";
+import sofa5 from "../images/Sofa-image5.jpg";
+import sofa6 from "../images/Sofa-image6.jpg";
+import sofa7 from "../images/Sofa-image7.jpg";
 
 // TV CONSOLE
 
-import tv1 from "../images/Tv console1.jpg";
-import tv2 from "../images/Tv console2.jpg";
-import tv3 from "../images/Tv console3.jpg";
-import tv4 from "../images/Tv console4.jpg";
+import tv1 from "../images/Tv-console1.jpg";
+import tv2 from "../images/Tv-console2.jpg";
+import tv3 from "../images/Tv-console3.jpg";
+import tv4 from "../images/Tv-console4.jpg";
 
 // WADROPE 
-import ward1 from "../images/Wadrope image1.jpg";
-import ward2 from "../images/Wadrope image2.jpg";
-import ward3 from "../images/Wadrope image3.jpg";
-import ward4 from "../images/Wadrope image4.jpg";
-import ward5 from "../images/Wadrope image5.jpg";
-import ward6 from "../images/Wadrope image6.jpg";
-import ward7 from "../images/Wadrope image7.jpg";
-import { image } from "framer-motion/client";
+import ward1 from "../images/Wadrope-image1.jpg";
+import ward2 from "../images/Wadrope-image2.jpg";
+import ward3 from "../images/Wadrope-image3.jpg";
+import ward4 from "../images/Wadrope-image4.jpg";
+import ward5 from "../images/Wadrope-image5.jpg";
+import ward6 from "../images/Wadrope-image6.jpg";
+import ward7 from "../images/Wadrope-image7.jpg";
 
 const products = [
   // BED FRAME
