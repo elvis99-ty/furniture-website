@@ -112,6 +112,15 @@
   transform: translateY(-2px);
 }
 
+.view-all-btn {
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.view-all-btn:active {
+  transform: scale(0.95); /* Slight "pop" when clicked */
+}
+
 /* ✅ Responsive */
 @media (max-width: 768px) {
   .blog-title {

@@ -1,7 +1,10 @@
-import React, { useState } from "react"; // Added useState
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageTransition from "./PageTransition";
+import SkeletonCard from "./SkeletonCard";
+
 import "./Product.css";
+
 
 // BED FRAME
 
@@ -41,6 +44,10 @@ import kit4 from "../images/Kitchen-image4.jpeg";
 import kit5 from "../images/Kitchen-image5.jpeg";
 import kit6 from "../images/Kitchen-image6.jpeg";
 import kit7 from "../images/Kitchen-image7.jpeg";
+import kit8 from "../images/Kitchen-image8.jpeg";
+import kit9 from "../images/Kitchen-image9.jpeg";
+import kit10 from "../images/Kitchen-image10.jpeg"
+
 
 // OFFICE SETUP
 
@@ -83,6 +90,11 @@ import ward4 from "../images/Wadrope-image4.jpg";
 import ward5 from "../images/Wadrope-image5.jpg";
 import ward6 from "../images/Wadrope-image6.jpg";
 import ward7 from "../images/Wadrope-image7.jpg";
+import ward8 from "../images/Wadrope-image8.jpg";
+import ward9 from "../images/Wadrope-image9.jpg";
+import ward10 from "../images/Wadrope-image10.jpg";
+import ward11 from "../images/Wadrope-image11.jpg";
+
 
 const products = [
   // BED FRAME
@@ -119,72 +131,94 @@ const products = [
   {id : 25, name : "Kitchen image", category : "KITCHEN IMAGE", image : kit5},
   {id : 26, name : "Kitchen image", category : "KITCHEN IMAGE", image : kit6},
   {id : 27, name : "Kitchen image", category : "KITCHEN IMAGE", image : kit7},
+  {id : 28, name : "Kitchen image", category : "KITCHEN IMAGE", image : kit8},
+  {id : 29, name : "Kitchen image", category : "KITCHEN IMAGE", image : kit9},
+  {id : 30, name : "Kitchen image", category : "KITCHEN IMAGE", image : kit10},
 
   // OFFICE SETUP
-  {id : 28, name : "Office setup", category : "OFFICE SETUP", image : off1},
-  {id : 29, name : "Office setup", category : "OFFICE SETUP", image : off2},
-  {id : 30, name : "Office setup", category : "OFFICE SETUP", image : off3},
-  {id : 31, name : "Office setup", category : "OFFICE SETUP", image : off4},
+  {id : 31, name : "Office setup", category : "OFFICE SETUP", image : off1},
+  {id : 32, name : "Office setup", category : "OFFICE SETUP", image : off2},
+  {id : 33, name : "Office setup", category : "OFFICE SETUP", image : off3},
+  {id : 34, name : "Office setup", category : "OFFICE SETUP", image : off4},
 
   //SCHOOL FURNITURE
-  {id : 32, name : "School furniture", category : "SCHOOL FURNITURE", image : sch1},
-  {id : 33, name : "Schoo2 furniture", category : "SCHOOL FURNITURE", image : sch2},
-  {id : 34, name : "Schoo3 furniture", category : "SCHOOL FURNITURE", image : sch3},
-  {id : 35, name : "Schoo4 furniture", category : "SCHOOL FURNITURE", image : sch4},
-  {id : 36, name : "Schoo5 furniture", category : "SCHOOL FURNITURE", image : sch5},
-  {id : 37, name : "Schoo6 furniture", category : "SCHOOL FURNITURE", image : sch6},
+  {id : 35, name : "School furniture", category : "SCHOOL FURNITURE", image : sch1},
+  {id : 36, name : "Schoo2 furniture", category : "SCHOOL FURNITURE", image : sch2},
+  {id : 37, name : "Schoo3 furniture", category : "SCHOOL FURNITURE", image : sch3},
+  {id : 38, name : "Schoo4 furniture", category : "SCHOOL FURNITURE", image : sch4},
+  {id : 39, name : "Schoo5 furniture", category : "SCHOOL FURNITURE", image : sch5},
+  {id : 40, name : "Schoo6 furniture", category : "SCHOOL FURNITURE", image : sch6},
 
   // SOFA IMAGE
-  {id : 38, name : "Sofa image", category : "SOFA IMAGE", image : sofa1},
-  {id : 39, name : "Sofa image", category : "SOFA IMAGE", image : sofa2},
-  {id : 40, name : "Sofa image", category : "SOFA IMAGE", image : sofa3},
-  {id : 41, name : "Sofa image", category : "SOFA IMAGE", image : sofa4},
-  {id : 42, name : "Sofa image", category : "SOFA IMAGE", image : sofa5},
-  {id : 43, name : "Sofa image", category : "SOFA IMAGE", image : sofa6},
-  {id : 44, name : "Sofa image", category : "SOFA IMAGE", image : sofa7},
+  {id : 41, name : "Sofa image", category : "SOFA IMAGE", image : sofa1},
+  {id : 42, name : "Sofa image", category : "SOFA IMAGE", image : sofa2},
+  {id : 43, name : "Sofa image", category : "SOFA IMAGE", image : sofa3},
+  {id : 44, name : "Sofa image", category : "SOFA IMAGE", image : sofa4},
+  {id : 45, name : "Sofa image", category : "SOFA IMAGE", image : sofa5},
+  {id : 46, name : "Sofa image", category : "SOFA IMAGE", image : sofa6},
+  {id : 47, name : "Sofa image", category : "SOFA IMAGE", image : sofa7},
 
   // TV CONSOLE 
-  {id : 45, name : "Tv console", category : "TV CONSOLE", image : tv1},
-  {id : 46, name : "Tv console", category : "TV CONSOLE", image : tv2},
-  {id : 47, name : "Tv console", category : "TV CONSOLE", image : tv3},
-  {id : 48, name : "Tv console", category : "TV CONSOLE", image : tv4},
+  {id : 48, name : "Tv console", category : "TV CONSOLE", image : tv1},
+  {id : 49, name : "Tv console", category : "TV CONSOLE", image : tv2},
+  {id : 50, name : "Tv console", category : "TV CONSOLE", image : tv3},
+  {id : 51, name : "Tv console", category : "TV CONSOLE", image : tv4},
   
   //
-  {id : 49, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward1},
-  {id : 50, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward2},
-  {id : 51, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward3},
-  {id : 52, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward4},
-  {id : 53, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward5},
-  {id : 54, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward6} ,
-  {id : 55, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward7},
+  {id : 52, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward1},
+  {id : 53, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward2},
+  {id : 54, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward3},
+  {id : 55, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward4},
+  {id : 56, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward5},
+  {id : 57, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward6} ,
+  {id : 58, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward7},
+  {id : 59, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward8},
+  {id : 60, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward9},
+  {id : 61, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward10},
+  {id : 62, name : "Wadrope Image", category : "WADROPE IMAGE", image : ward11},
 ];
 
 const Products = () => {
   const [selectedCategory, setSelectedCategory] = useState("ALL");
   const [visibleCount, setVisibleCount] = useState(12);
+  const [isInitialLoading, setIsInitialLoading] = useState(true); // Page load stage
+  const [isMoreLoading, setIsMoreLoading] = useState(false); // "Show more" stage
+
+  // Simulate Initial Page Load Skeleton (Stage 2)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsInitialLoading(false);
+    }, 1200); 
+    return () => clearTimeout(timer);
+  }, []);
 
   const categories = [
-    "ALL", "BED FRAME", "DINNING IMAGE", "KITCHEN IMAGE", "OFFICE SETUP", 
+    "ALL", "DOOR IMAGE", "BED FRAME", "DINNING IMAGE", "KITCHEN IMAGE", "OFFICE SETUP", 
     "SCHOOL FURNITURE", "SOFA IMAGE", "TV CONSOLE", "WADROPE IMAGE"
   ];
 
-  // 1. Filter the big list first
   const filteredProducts = selectedCategory === "ALL"
     ? products
     : products.filter(item => item.category === selectedCategory);
 
-  // 2. Create the smaller "Slice" for the screen
   const displayProducts = filteredProducts.slice(0, visibleCount);
 
-  // 3. Logic to show more
+  // Logic to show skeletons when loading more
   const loadMore = () => {
-    setVisibleCount(prev => prev + 8);
+    setIsMoreLoading(true);
+    
+    setTimeout(() => {
+      setVisibleCount(prev => prev + 8);
+      setIsMoreLoading(false);
+    }, 1000); // 1 second shimmer for the new items
   };
 
-  // 4. Logic to switch categories and reset count
   const handleCategoryChange = (cat) => {
+    setIsInitialLoading(true); // Show skeletons again when switching categories
     setSelectedCategory(cat);
-    setVisibleCount(12); // Always go back to 12 when switching
+    setVisibleCount(12);
+    
+    setTimeout(() => setIsInitialLoading(false), 800);
   };
 
   const phoneNumber = "2348035059077"; 
@@ -206,7 +240,6 @@ const Products = () => {
               <button 
                 key={cat}
                 className={`filter-btn ${selectedCategory === cat ? "active" : ""}`}
-                // FIXED: Use the handler function here!
                 onClick={() => handleCategoryChange(cat)}
               >
                 {cat}
@@ -217,44 +250,51 @@ const Products = () => {
 
         <motion.div layout className="products-grid">
           <AnimatePresence mode="popLayout">
-            {/* FIXED: Map over displayProducts, not filteredProducts! */}
-            {displayProducts.map((item) => (
-              <motion.div 
-                layout
-                className="product-card" 
-                key={item.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-              >
-                <div className="product-image-wrapper">
-                  <img src={item.image} alt={item.name} loading="lazy" />
-                </div>
-
-                <div className="product-info">
-                  <span className="product-cat">{item.category}</span>
-                  <h3>{item.name}</h3>
-                  <div className="product-actions">
-                    <a href={getWhatsappLink(item.name)} target="_blank" rel="noopener noreferrer" className="action-btn whatsapp-btn">WhatsApp</a>
-                    <a href={getEmailLink(item.name)} className="action-btn email-btn">Email</a>
+            {/* STAGE 2: Show Initial Skeletons */}
+            {isInitialLoading ? (
+              [...Array(8)].map((_, i) => <SkeletonCard key={i} />)
+            ) : (
+              displayProducts.map((item) => (
+                <motion.div 
+                  layout
+                  className="product-card" 
+                  key={item.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div className="product-image-wrapper">
+                    <img src={item.image} alt={item.name} loading="lazy" />
                   </div>
-                </div>
-              </motion.div>
-            ))}
+
+                  <div className="product-info">
+                    <span className="product-cat">{item.category}</span>
+                    <h3>{item.name}</h3>
+                    <div className="product-actions">
+                      <a href={getWhatsappLink(item.name)} target="_blank" rel="noopener noreferrer" className="action-btn whatsapp-btn">WhatsApp</a>
+                      <a href={getEmailLink(item.name)} className="action-btn email-btn">Email</a>
+                    </div>
+                  </div>
+                </motion.div>
+              ))
+            )}
+
+            {/* STAGE 3: Show Extra Skeletons when clicking Load More */}
+            {isMoreLoading && [...Array(4)].map((_, i) => <SkeletonCard key={`more-${i}`} />)}
           </AnimatePresence>
         </motion.div>
 
-        {/* FIXED: Added the Load More Button UI here */}
-        {visibleCount < filteredProducts.length && (
+        {visibleCount < filteredProducts.length && !isInitialLoading && (
           <div className="load-more-container" style={{ textAlign: "center", padding: "40px 0" }}>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="view-all-btn" // Using your existing class
+              className="view-all-btn"
               onClick={loadMore}
+              disabled={isMoreLoading}
             >
-              Show More Designs
+              {isMoreLoading ? "Loading designs..." : "Show More Designs"}
             </motion.button>
           </div>
         )}

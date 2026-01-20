@@ -30,7 +30,6 @@ const Collection = () => {
         </div>
       </div>
 
-      {/* Updated: Button now links to /products */}
       <Link to="/products" className="view-btn">
         View Full Collection
       </Link>

@@ -163,6 +163,64 @@
   background: #f9f9f9;
 }
 
+/* --- LOAD MORE SECTION --- */
+.load-more-container {
+  grid-column: 1 / -1; /* Makes the container span the full width of the grid */
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  margin-top: 20px;
+}
+
+.view-all-btn {
+  padding: 16px 45px;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #1a1a1a;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.view-all-btn:hover {
+  background: transparent;
+  color: #1a1a1a;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+/* --- ENHANCED CARD HOVER --- */
+.product-card {
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* --- RESPONSIVE FIX FOR FILTER BAR --- */
+@media (max-width: 650px) {
+  .filter-bar {
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 0.65rem; /* Smaller text so buttons stay on fewer lines */
+  }
+
+  .products-header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+}
+
 @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 650px) { 
   .products-grid { grid-template-columns: 1fr; } 

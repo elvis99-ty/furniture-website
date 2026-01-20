@@ -1,0 +1,55 @@
+.workshop-section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.workshop-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.workshop-header h1 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+
+.header-accent-line {
+  width: 60px;
+  height: 4px;
+  background: #c99a00;
+  margin: 15px auto;
+}
+
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.workshop-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Keeps all videos the same size */
+  background: #000;
+}
+
+.workshop-video {
+  height: 100%;
+  object-fit: cover;
+}
+
+.workshop-info {
+  padding: 20px;
+}
+
+.workshop-info h3 {
+  color: #c99a00;
+  margin-bottom: 10px;
+}
