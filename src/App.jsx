@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Products from "./components/Product";
 import Footer from "./components/Footer";
-import Workshop from "./components/Workshop"; // FIX 1: Changed 'WorkShop' to 'Workshop'
+import Workshop from "./components/Workshop";
 
 function App() {
   const location = useLocation();

@@ -11,6 +11,9 @@ import video4 from "../assets/videos/Kitchen-cabinet2.mp4";
 import video5 from "../assets/videos/Kitchen-cabinet3.mp4";
 import video6 from "../assets/videos/Wadrobe.mp4";
 import video7 from "../assets/videos/Wadrobe2.mp4";
+import video8 from "../assets/videos/Cutting-of-kitchen-cabinet.mp4";
+import video9 from "../assets/videos/Kitchen-setting.mp4";
+import video10 from "../assets/videos/Leaping-of-doors-and-frames.mp4";
 
 
 const workshopVideos = [
@@ -49,6 +52,30 @@ const workshopVideos = [
     title: "Kitchen Cabinet Crafting",
     videoSrc: video6,
     description: "Precision engineering for the heart of your home."
+  },
+  {
+    id: 7,
+    title: "Kitchen Cabinet Crafting",
+    videoSrc: video7,
+    description: "Precision engineering for the heart of your home."
+  },
+  {
+    id : 8,
+    title : "Cutting of kitchen cabinet",
+    videoSrc : video8,
+    description: "Cutting-of-kitchen-cabinet"
+  },
+  {
+    id : 9,
+    title : "Kitchen setting",
+    videoSrc : video9,
+    description: "Kitchen-setting"
+  },
+  {
+    id : 10,
+    title : "Leaping of doors and frames",
+    videoSrc : video10,
+    description: "Leaping-of-doors-and-frames"
   }
 ];
 

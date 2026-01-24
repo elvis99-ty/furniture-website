@@ -28,7 +28,6 @@
 
           <aside className="contact-info-card" aria-label="Contact information">
             <div className="info-item">
-              {/* If you have icons, replace the emoji with <img src={mailIcon} alt="" /> */}
               <div className="info-icon">📧</div>
               <div className="info-text">
                 <h4>Email</h4>

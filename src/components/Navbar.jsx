@@ -40,8 +40,6 @@ const Navbar = () => {
           <li><NavHashLink smooth to="/#home" onClick={closeMenu}>Home</NavHashLink></li>
           <li><NavHashLink smooth to="/#about" onClick={closeMenu}>About</NavHashLink></li>
           <li><NavHashLink smooth to="/#products" onClick={closeMenu}>Products</NavHashLink></li>
-          {/* Added Workshop link so it's accessible everywhere */}
-          <li><Link to="/workshop" onClick={closeMenu}>Workshop</Link></li>
           <li><NavHashLink smooth to="/#contact" onClick={closeMenu}>Contact</NavHashLink></li>
           
           <li className="mobile-only-item">

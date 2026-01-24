@@ -15,9 +15,8 @@ const Footer = () => {
         </div>
 
         <div className="footer-right">
-          <a href="#"><FaInstagram /></a>
-          <a href="#"><FaFacebookF /></a>
-          <a href="#"><FaTwitter /></a>
+          <a href="https://www.instagram.com/Ki.ngsfurniture" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+          <a href="https://www.facebook.com/search/top?q=kings%20furniture" target="\_blank" rel="noopener noreferrer"><FaFacebookF /></a>
         </div>
       </div>
 

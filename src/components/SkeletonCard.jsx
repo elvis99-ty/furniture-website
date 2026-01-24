@@ -1,6 +1,5 @@
 import React from "react";
-import "./Product.css"; // We'll put the skeleton styles here
-
+import "./Product.css"; 
 const SkeletonCard = () => {
   return (
     <div className="product-card skeleton-card">
